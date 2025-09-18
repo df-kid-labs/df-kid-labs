@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daley — Blog</title>
+  <meta name="description" content="Daley's minimal, no-framework blog.">
+  <meta name="theme-color" content="#0b0c0f">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#111111; --muted:#555; --accent:#2563eb;
+      --border:#e5e7eb; --max:720px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0c0f; --text:#e6e6e6; --muted:#a0a0a0; --accent:#60a5fa;
+        --border:#1f2937;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      line-height:1.6;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:16px}
+    header{
+      border-bottom:1px solid var(--border);
+      position:sticky; top:0; background:var(--bg);
+      backdrop-filter:saturate(180%) blur(10px);
+    }
+    .header-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px}
+    .brand{font-weight:700}
+    nav a{color:var(--muted); margin-left:12px}
+    main{padding:24px 16px}
+    h1{margin:.2rem 0 0; font-size:1.5rem}
+    .tagline{color:var(--muted); margin:.25rem 0 0}
+    #posts h2{margin-top:0}
+    article{
+      padding:20px 0; border-bottom:1px solid var(--border)
+    }
+    article:last-of-type{border-bottom:0}
+    article h3{margin:0; font-size:1.35rem}
+    time{display:block; color:var(--muted); font-size:.9rem; margin:.2rem 0 .6rem}
+    .permalink{color:var(--muted); font-size:.9rem; margin-left:.25rem}
+    footer{border-top:1px solid var(--border)}
+    footer .wrap{font-size:.9rem; color:var(--muted)}
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); border:0
+    }
+  </style>
+</head>
+<body id="top">
+<a class="sr-only" href="#content">Skip to content</a>
+
+<header>
+  <div class="wrap header-row">
+    <span class="brand">Daley</span>
+    <nav>
+      <a href="#posts">Posts</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/daleyf" rel="me">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="content">
+  <section class="wrap">
+    <h1>Minimal Blog</h1>
+    <p class="tagline">Plain HTML + CSS. No build, no frameworks.</p>
+  </section>
+
+  <section id="posts" class="wrap">
+    <h2>Posts</h2>
+
+    <!-- POST TEMPLATE — copy from <article> to </article>, then edit id/title/date/content.
+         Keep id = YYYY-MM-DD-slug to get stable permalinks like #2025-09-18-hello -->
+    <!--
+    <article id="YYYY-MM-DD-slug">
+      <h3>
+        <a href="#YYYY-MM-DD-slug">Your Post Title</a>
+        <a class="permalink" href="#YYYY-MM-DD-slug">#</a>
+      </h3>
+      <time datetime="YYYY-MM-DD">Month DD, YYYY</time>
+      <p>Your content here. Short paragraphs read best.</p>
+    </article>
+    -->
+
+    <article id="2025-09-18-hello">
+      <h3>
+        <a href="#2025-09-18-hello">Hello, world</a>
+        <a class="permalink" href="#2025-09-18-hello">#</a>
+      </h3>
+      <time datetime="2025-09-18">September 18, 2025</time>
+      <p>This is a starting point: a single file you can edit anywhere. Add posts by copying the template comment above.</p>
+    </article>
+
+    <article id="2025-09-18-plan">
+      <h3>
+        <a href="#2025-09-18-plan">Build plan</a>
+        <a class="permalink" href="#2025-09-18-plan">#</a>
+      </h3>
+      <time datetime="2025-09-18">September 18, 2025</time>
+      <p>Ship small, often. If you want separate pages later, create <code>posts/my-post.html</code> and link it here.</p>
+    </article>
+  </section>
+
+  <section id="about" class="wrap">
+    <h2>About</h2>
+    <p>I’m Daley. This blog is intentionally simple so I can focus on writing and building.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year">2025</span> Daley • <a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<!-- (Optional) If you want the year to stay current, uncomment the 1-liner below -->
+<!-- <script>document.getElementById('year').textContent=new Date().getFullYear()</script> -->
+</body>
+</html>
